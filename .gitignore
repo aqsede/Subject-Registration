@@ -16,3 +16,437 @@
 *.exe
 *.out
 *.app
+
+// dont know yet
+
+#include <stdio.h>
+int main ()
+{
+	int matric, course, sub, nosubject, dot, group, choosegroup, loop;
+	int sub1=0, sub2=0, sub3=0, group1=0, group2=0, group3=0;
+	char counting[10]="first";
+
+	
+	system ("title TEC Subject Registration  v0.1a"); //initial release.
+	
+	printf("Enter your matric number:\n");
+	scanf("%d", &matric);
+	system("cls");
+	printf("Hello %d!, \nWelcome to Tinker Engineering College.\nHere you can register your subject for this semester.\n\n", matric);
+	printf("Connecting");
+	
+	for (dot=1; dot<=7; dot++)
+	{
+		printf(".");
+		sleep(1);
+	}
+
+	printf(".\n\nPlease wait\n");
+	sleep(5);//Why if i put 5=5sec?? it should be in milisecond! zzzz
+	system ("cls");
+	
+	do
+	{
+		printf("These are the list of course:\n\n");
+		printf("1-Engine\n");
+		printf("2-ICT\n");
+		printf("\nWhat is your course? \n(enter the number on the list for your course)\n\n");
+		scanf("%d", &course);
+		system ("cls");
+		
+	}while (course>2 || course<1);
+	
+	printf("How many subject would you like to take this semester?\n");
+	printf("Please be noted that you can only take 3 core subject at most per semester\n");
+	scanf("%d", &nosubject);
+	
+	while (nosubject>3 || nosubject<=0)
+	{
+		system("cls");
+		printf("You can only take 3 core subject at most per semester!\nPlease re-enter:\n");
+		// bug when user input float. infinate loop. ask
+		scanf("%d", &nosubject);
+		
+	}
+	system("cls");
+	
+	if (course == 1)
+	{
+		printf("Your course is Engineering\n\n");
+	
+		
+		do
+		{
+		
+			for (sub=1; sub<=nosubject; sub++)
+			{
+				printf("The available subject is:\n");
+				printf("1-Chemistry I\n");
+				printf("2-Chemistry II\n");
+				printf("3-Physics I\n");
+				printf("4-Physics II\n");
+				printf("5-Mathematics I\n");
+				printf("6-Mathematics II\n");
+				printf("7-Mathematics III\n");	
+				printf("8-Computer I\n");
+				printf("9-Computer II\n\n");
+				printf("Enter your choosen subject number %d:\n", sub);
+					
+				switch (sub)
+				{
+					case 1: 
+						scanf("%d", &sub1);
+						choosegroup=sub1;
+						group=1;break;
+					case 2:
+						scanf("%d", &sub2);
+						choosegroup=sub2;
+						group=2;break;
+					case 3:	
+						scanf("%d", &sub3);
+						choosegroup=sub3;
+						group=3;break;
+				}
+				
+				
+				
+				printf("Group available:\n");
+				
+				switch (choosegroup)
+				{
+					case 1:printf("1=G118\n2-G119\n");break;
+					case 2:printf("1=G128\n2-G129\n");break;
+					case 3:printf("1=G138\n2-G139\n");break;
+					case 4:printf("1=G148\n2-G149\n");break;
+					case 5:printf("1=G158\n2-G159\n");break;
+					case 6:printf("1=G168\n2-G169\n");break;
+					case 7:printf("1=G178\n2-G179\n");break;
+					case 8:printf("1=G188\n2-G189\n");break;
+					case 9:printf("1=G198\n2-G199\n");break;
+					default:printf("No Group available for this subject. Please refer to your Academic Adviser.");break;
+				}
+				
+				printf("Enter your choosen group:\n");
+				
+				switch (group)
+				{
+					case 1:scanf("%d", &group1);break;
+					case 2:scanf("%d", &group2);break;
+					case 3:scanf("%d", &group3);break;
+				}
+				system("cls");
+			}	
+			
+		}while (sub1>9 || sub1<0 || sub2>9 || sub2<0 || sub3>9 || sub3<0);
+		
+		printf("Your subject is %d, %d, %d\n",sub1, sub2, sub3);
+		printf("Your Group is %d, %d, %d\n", group1, group2, group3);
+		
+		printf("Subject taken for this semester is ");
+		
+		
+		if(sub1==1)
+		{
+			printf ("Chemistry I");
+			if (group1==1)
+			printf(" G118");
+			else if (group1==2)
+			printf(" G119");
+		}
+		
+		else if(sub1==2)
+		{
+			printf ("Chemistry II");
+			if (group1==1)
+			printf(" G128");
+			else if (group1==2)
+			printf(" G129");
+		}
+		
+		else if(sub1==3)
+		{
+			printf ("Physics I");
+			if (group1==1)
+			printf(" G138");
+			else if (group1==2)
+			printf(" G139");
+		}
+		
+		else if(sub1==4)
+		{
+			printf ("Physics II");
+			if (group1==1)
+			printf(" G148");
+			else if (group1==2)
+			printf(" G149");
+		}
+		
+		else if(sub1==5)
+		{
+			printf ("Mathematics I");
+			if (group1==1)
+			printf(" G158");
+			else if (group1==2)
+			printf(" G159");
+		}
+		
+		else if(sub1==6)
+		{
+			printf ("Mathematics II");
+			if (group1==1)
+			printf(" G168");
+			else if (group1==2)
+			printf(" G169");
+		}
+		
+		else if(sub1==7)
+		{
+			printf ("Mathematics III");
+			if (group1==1)
+			printf(" G178");
+			else if (group1==2)
+			printf(" G179");
+		}
+		
+		else if(sub1==8)
+		{
+		
+			printf ("Computer I");
+			if (group1==1)
+			printf(" G188");
+			else if (group1==2)
+			printf(" G189");
+		}
+		
+		else if(sub1==9)
+		{
+			printf ("Computer II");
+			if (group1==1)
+			printf(" G198");
+			else if (group1==2)
+			printf(" G199");
+		}
+		
+		if (sub2!=0)
+		printf(", ");
+		
+		// FOR SUBJECT nombo 2
+		
+		if(sub2==1)
+		{
+			printf ("Chemistry I");
+			if (group2==1)
+			printf(" G118");
+			else if (group2==2)
+			printf(" G119");
+		}
+		
+		else if(sub2==2)
+		{
+			printf ("Chemistry II");
+			if (group2==1)
+			printf(" G128");
+			else if (group2==2)
+			printf(" G129");
+		}
+		
+		else if(sub2==3)
+		{
+			printf ("Physics I");
+			if (group2==1)
+			printf(" G138");
+			else if (group2==2)
+			printf(" G139");
+		}
+		
+		else if(sub2==4)
+		{
+			printf ("Physics II");
+			if (group2==1)
+			printf(" G148");
+			else if (group2==2)
+			printf(" G149");
+		}
+		
+		else if(sub2==5)
+		{
+			printf ("Mathematics I");
+			if (group1==1)
+			printf(" G158");
+			else if (group1==2)
+			printf(" G159");
+		}
+		
+		else if(sub2==6)
+		{
+			printf ("Mathematics II");
+			if (group2==1)
+			printf(" G168");
+			else if (group2==2)
+			printf(" G169");
+		}
+		
+		else if(sub2==7)
+		{
+			printf ("Mathematics III");
+			if (group2==1)
+			printf(" G178");
+			else if (group2==2)
+			printf(" G179");
+		}
+		
+		else if(sub2==8)
+		{
+		
+			printf ("Computer I");
+			if (group2==1)
+			printf(" G188");
+			else if (group2==2)
+			printf(" G189");
+		}
+		
+		else if(sub2==9)
+		{
+			printf ("Computer II");
+			if (group2==1)
+			printf(" G198");
+			else if (group2==2)
+			printf(" G199");
+		}
+		
+		if (sub3!=0)
+		printf(" and ");
+		
+		
+		if(sub3==1)
+		printf ("Chemistry I");
+		else if(sub3==2)
+		printf ("Chemistry II");
+		else if(sub3==3)
+		printf ("Physics I");
+		else if(sub3==4)
+		printf ("Physics II");
+		else if(sub3==5)
+		printf ("Mathematics I");
+		else if(sub3==6)
+		printf ("Mathematics II");
+		else if(sub3==7)
+		printf ("Mathematics III");
+		else if(sub3==8)
+		printf ("Computer I");
+		else if(sub3==9)
+		printf ("Computer II");
+		else
+		{
+			printf(" \nAWARE: You only take 2 chapter this semester.\n");
+		}
+		
+		printf(". \n");
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}	
+	else if (course == 2)
+	{
+	printf("Your course is ICT\n\n");
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	system ("pause");
+	return 0;
+}
+
+
